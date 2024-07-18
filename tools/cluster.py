@@ -87,7 +87,7 @@ def main():
     parser = argparse.ArgumentParser(description="PyTorch Object Detection Training")
     parser.add_argument(
         "--config-file",
-        default="./configs/stl10/gatcluster.py",
+        default="./configs/imagenet10/gatcluster.py",
         metavar="FILE",
         help="path to config file",
         type=str,
