@@ -138,7 +138,7 @@ class GaussianAttentionClusterHead(nn.Module):
             for c in range(self.num_cluster):
                 cc = predicted == c
                 assert cc.shape[0] > 0
-                idx_c = list(np.argwhere(cc).squeeze())
+                idx_c = list(np.argwhere(cc).squeeze(-1))
                 id_x = torch.zeros_like(r)
                 id_y = torch.zeros_like(r)
                 id_x[idx_c, :] = 1

@@ -28,7 +28,7 @@ data_train = dict(
     show=False,
     num_trans_aug=num_trans_aug,
     resize=resize,
-    gray=True,
+    gray=False,
 )
 
 data_test = dict(
@@ -41,14 +41,14 @@ data_test = dict(
     train=False,
     show=False,
     resize=resize,
-    gray=True,
+    gray=False,
 )
 
 model = dict(
     type="gattcluster",
     feature=dict(
         type="convnet",
-        input_channel=1,
+        input_channel=3,
         conv_layers=[[64, 64, 64], 'max_pooling', [128, 128, 128], 'max_pooling', [256, 256, 256], 'max_pooling',
                     [256, 256, fea_dim]],
         kernels=[[3, 3, 3], 2, [3, 3, 3], 2, [3, 3, 3], 2, [3, 3, 1]],
